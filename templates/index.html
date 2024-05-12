@@ -13,8 +13,14 @@
         <select id="target_column" name="target_column">
             <!-- Options for target column selection will be populated dynamically -->
         </select><br><br>
-        <input type="submit" value="Predict" style="display: none;">
+        <input type="button" id="predictButton" value="Predict">
     </form>
+
+    <!-- Prediction result element -->
+    <div id="predictionResult" style="display: none;">
+        <h2>Prediction Result:</h2>
+        <p id="predictionText"></p>
+    </div>
 
     <script>
         document.getElementById('fileInput').addEventListener('change', function(e) {
@@ -36,12 +42,27 @@
                     select.appendChild(option);
                 });
 
-                // Show the submit button after columns are populated
-                document.getElementById('uploadForm').submit();
+                // Show the predict button after columns are populated
+                document.getElementById('predictButton').style.display = 'inline';
             };
 
             reader.readAsText(file);
         });
+
+        // Add event listener to predict button
+        document.getElementById('predictButton').addEventListener('click', function() {
+            document.getElementById('uploadForm').submit();
+        });
+
+        // Function to display prediction result
+        function showPredictionResult(result) {
+            var predictionResultDiv = document.getElementById('predictionResult');
+            var predictionText = document.getElementById('predictionText');
+
+            // Display prediction result
+            predictionText.textContent = result;
+            predictionResultDiv.style.display = 'block';
+        }
     </script>
 </body>
 </html>
