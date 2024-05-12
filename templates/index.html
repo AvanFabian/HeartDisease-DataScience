@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+</head>
+<body>
+    <h1>Heart Disease Prediction</h1>
+    <form id="uploadForm" action="/" method="post" enctype="multipart/form-data">
+        <input type="file" id="fileInput" name="file" accept=".csv" required><br><br>
+        <label for="target_column">Select Target Column:</label>
+        <select id="target_column" name="target_column">
+            <!-- Options for target column selection will be populated dynamically -->
+        </select><br><br>
+        <input type="submit" value="Predict" style="display: none;">
+    </form>
+
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function(e) {
+            var file = e.target.files[0];
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                var csv = e.target.result;
+                var lines = csv.split("\n");
+                var columnNames = lines[0].trim().split(",");
+
+                var select = document.getElementById('target_column');
+                select.innerHTML = ''; // Clear existing options
+
+                columnNames.forEach(function(column) {
+                    var option = document.createElement('option');
+                    option.text = column;
+                    option.value = column;
+                    select.appendChild(option);
+                });
+
+                // Show the submit button after columns are populated
+                document.getElementById('uploadForm').submit();
+            };
+
+            reader.readAsText(file);
+        });
+    </script>
+</body>
+</html>
