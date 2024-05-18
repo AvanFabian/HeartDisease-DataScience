@@ -1,0 +1,27 @@
+   <div class="container mt-5">
+            <h1 class="text-center mb-4">Heart Disease Prediction</h1>
+            <form id="uploadForm" action="/" method="post" enctype="multipart/form-data" class="border p-4 rounded">
+                <div class="mb-3">
+                    <label for="fileInput" class="form-label">Upload CSV File:</label>
+                    <input type="file" id="fileInput" name="file" accept=".csv" class="form-control" required style="display: none;">
+                    <div id="dropArea" class="border border-dashed p-4 text-center">
+                        Drag and drop a file here or click to upload
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="target_column" class="form-label">Select Target Column:</label>
+                    <select id="target_column" name="target_column" class="form-select">
+                        <!-- Options for target column selection will be populated dynamically -->
+                    </select><br><br>
+                </div>
+                <div class="text-center">
+                    <button type="button" id="predictButton" class="btn btn-primary">Predict</button>
+                </div>
+            </form>
+    
+            <!-- Prediction result element -->
+            <div id="predictionResult" class="mt-4" style="display: none;">
+                <h2>Prediction Result:</h2>
+                <p id="predictionText"></p>
+            </div>
+        </div>
