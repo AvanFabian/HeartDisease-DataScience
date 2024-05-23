@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from statistics import mode
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder
+from sklearn.metrics import confusion_matrix
 
 app = Flask(__name__)
 
@@ -58,7 +59,7 @@ def predict(df, target_column, X):
     # Return the most common prediction value
     most_common_prediction = mode(predictions)
 
-    return most_common_prediction
+    return most_common_prediction, predictions, y_test
 
 @app.route('/', methods=['GET'])
 def index():
@@ -86,10 +87,20 @@ def make_prediction():
     # Preprocess the data
     X, y = preprocess_data(df, target_column)
 
-    # Make prediction
-    prediction = predict(df, target_column, X)
+    # Make prediction and obtain predictions and true labels
+    most_common_prediction, predictions, y_test = predict(df, target_column, X)
+    print("predictions: ", predictions)
+    # Calculate confusion matrix
+    cm = confusion_matrix(y_test, predictions)
 
-    return jsonify({'prediction': prediction})
+    # Convert the confusion matrix to a DataFrame for easier handling
+    cm_df = pd.DataFrame(cm, index=['Actual Negative', 'Actual Positive'], columns=['Predicted Negative', 'Predicted Positive'])
+
+    # Convert the DataFrame to HTML
+    cm_html = cm_df.to_html(classes='table table-striped')
+
+    return jsonify({'prediction': most_common_prediction, 'confusion_matrix': cm_html})
+
 
 if __name__ == '__main__':
     app.run(debug=True)

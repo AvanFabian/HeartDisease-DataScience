@@ -152,7 +152,12 @@
                 <button type="button" id="predictButton" class="btn btn-primary" style="display: none;">Predict</button>
             </div>
         </form>
-
+        
+        <!--  Confusion Matrix -->
+        <div id="confusionMatrix" class="mt-4" style="display: none;">
+            <h2>Confusion Matrix:</h2>
+            <div id="confusionMatrixTable"></div>
+        </div>
         <!-- Prediction result element -->
         <div id="predictionResult" class="mt-4" style="display: none;">
             <h2>Prediction Result:</h2>
@@ -304,15 +309,22 @@
                 if (xhr.status === 200) {
                     var response = JSON.parse(xhr.responseText);
                     var prediction = response.prediction;
+                    var confusionMatrixHtml = response.confusion_matrix;
 
                     // Show the prediction result
                     document.getElementById('predictionText').textContent = 'Most common prediction: ' + prediction;
                     document.getElementById('predictionResult').style.display = 'block';
+
+                    // Show the confusion matrix
+                    document.getElementById('confusionMatrixTable').innerHTML = confusionMatrixHtml;
+                    document.getElementById('confusionMatrix').style.display = 'block';
                 }
             };
             xhr.send(formData);
         });
     </script>
+
+
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
