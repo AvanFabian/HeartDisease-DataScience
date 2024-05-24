@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>HEARTALYZE</title>
+    <title>TyroPredict</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -34,72 +34,20 @@
 </head>
 
 <body>
-    <!-- Topbar Start -->
-    <div class="container-fluid py-2 border-bottom d-none d-lg-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="text-decoration-none text-body pe-3" href=""><i class="bi bi-telephone me-2"></i>+012
-                            345 6789</a>
-                        <span class="text-body">|</span>
-                        <a class="text-decoration-none text-body px-3" href=""><i
-                                class="bi bi-envelope me-2"></i>info@example.com</a>
-                    </div>
-                </div>
-                <div class="col-md-6 text-center text-lg-end">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="text-body px-2" href="">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a class="text-body px-2" href="">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a class="text-body px-2" href="">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a class="text-body px-2" href="">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a class="text-body ps-2" href="">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
-
-
     <!-- Navbar Start -->
     <div class="container-fluid sticky-top bg-white shadow-sm">
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
                 <a href="index.html" class="navbar-brand">
-                    <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-clinic-medical me-2"></i>HEARTALYZE</h1>
+                    <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-clinic-medical me-2"></i>TyroPredict</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Service</a>
-                        <a href="price.html" class="nav-item nav-link">Pricing</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                                <a href="detail.html" class="dropdown-item">Blog Detail</a>
-                                <a href="team.html" class="dropdown-item">The Team</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="appointment.html" class="dropdown-item">Appointment</a>
-                                <a href="search.html" class="dropdown-item">Search</a>
-                            </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="#" class="nav-item nav-link active">Home</a>
+                        <a href="#predict" class="nav-item nav-link">Predict</a>
                     </div>
                 </div>
             </nav>
@@ -108,17 +56,18 @@
     <!-- Navbar End -->
 
 
+
     <!-- Hero Start -->
     <div class="container-fluid bg-primary py-5 mb-5 hero-header">
         <div class="container py-5">
             <div class="row justify-content-start">
                 <div class="col-lg-8 text-center text-lg-start">
                     <h5 class="d-inline-block text-secondary text-uppercase border-bottom border-5"
-                        style="border-color: rgba(256, 256, 256, .3) !important;">Welcome To Medinova</h5>
-                    <h1 class="display-1 text-white mb-md-4">Best Healthcare Solution In Your City</h1>
+                        style="border-color: rgba(256, 256, 256, .3) !important;">Welcome To TyroPredict</h5>
+                    <h1 class="display-1 text-white mb-md-4">Ready to Predict Your Tyroid Disease</h1>
                     <div class="pt-2">
-                        <a href="" class="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">Find Doctor</a>
-                        <a href="" class="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2">Appointment</a>
+                        <a href="#predict" class="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">Predict your Tyroid</a>
+                        <a href="javascript:void(0);" id="uploadFileButton" class="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2">Upload file</a>
                     </div>
                 </div>
             </div>
@@ -127,8 +76,8 @@
     <!-- Hero End -->
 
     <!-- main start -->
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">Heart Disease Prediction</h1>
+    <div class="container mt-5" name="predict" id="predict">
+        <h1 class="text-center mb-4">Tyroid Disease Prediction</h1>
         <form id="uploadForm" class="border p-4 rounded">
             <div class="mb-3">
                 <label for="fileInput" class="form-label">Upload CSV File:</label>
@@ -166,86 +115,79 @@
     </div>
     <!-- main end -->
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light mt-5 py-5">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h4
-                        class="d-inline-block text-secondary text-uppercase border-bottom border-5 border-secondary mb-4">
-                        Get In Touch</h4>
-                    <p class="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed
-                        dolor</p>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt text-secondary me-3"></i>123 Street, New York, USA
-                    </p>
-                    <p class="mb-2"><i class="fa fa-envelope text-secondary me-3"></i>info@example.com</p>
-                    <p class="mb-0"><i class="fa fa-phone-alt text-secondary me-3"></i>+012 345 67890</p>
+   <!-- Footer Start -->
+<div class="container-fluid bg-dark text-light mt-5 py-5">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <h4 class="d-inline-block text-secondary text-uppercase border-bottom border-5 border-secondary mb-4">
+                    Get In Touch
+                </h4>
+                <p class="mb-4">Contact us for more information about thyroid disease prediction and our services.</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-secondary me-3"></i>Lowokwaru, Malang</p>
+                <p class="mb-2"><i class="fa fa-envelope text-secondary me-3"></i>support@tyropredict.com</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-secondary me-3"></i>+012 345 67890</p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="d-inline-block text-secondary text-uppercase border-bottom border-5 border-secondary mb-4">
+                    Quick Links
+                </h4>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Home</a>
+                    <a class="text-light mb-2" href="#about"><i class="fa fa-angle-right me-2"></i>About Us</a>
+                    <a class="text-light mb-2" href="#services"><i class="fa fa-angle-right me-2"></i>Our Services</a>
+                    <a class="text-light mb-2" href="#team"><i class="fa fa-angle-right me-2"></i>Meet The Team</a>
+                    <a class="text-light mb-2" href="#blog"><i class="fa fa-angle-right me-2"></i>Latest Blog</a>
+                    <a class="text-light" href="#contact"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4
-                        class="d-inline-block text-secondary text-uppercase border-bottom border-5 border-secondary mb-4">
-                        Quick Links</h4>
-                    <div class="d-flex flex-column justify-content-start">
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Home</a>
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>About Us</a>
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Our Services</a>
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Meet The Team</a>
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Latest Blog</a>
-                        <a class="text-light" href="#"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
-                    </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="d-inline-block text-secondary text-uppercase border-bottom border-5 border-secondary mb-4">
+                    Resources
+                </h4>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-light mb-2" href="#faq"><i class="fa fa-angle-right me-2"></i>FAQ</a>
+                    <a class="text-light mb-2" href="#research"><i class="fa fa-angle-right me-2"></i>Research</a>
+                    <a class="text-light mb-2" href="#case-studies"><i class="fa fa-angle-right me-2"></i>Case Studies</a>
+                    <a class="text-light mb-2" href="#testimonials"><i class="fa fa-angle-right me-2"></i>Testimonials</a>
+                    <a class="text-light" href="#privacy"><i class="fa fa-angle-right me-2"></i>Privacy Policy</a>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4
-                        class="d-inline-block text-secondary text-uppercase border-bottom border-5 border-secondary mb-4">
-                        Popular Links</h4>
-                    <div class="d-flex flex-column justify-content-start">
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Home</a>
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>About Us</a>
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Our Services</a>
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Meet The Team</a>
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Latest Blog</a>
-                        <a class="text-light" href="#"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="d-inline-block text-secondary text-uppercase border-bottom border-5 border-secondary mb-4">
+                    Newsletter
+                </h4>
+                <form action="">
+                    <div class="input-group">
+                        <input type="email" class="form-control p-3 border-0" placeholder="Your Email Address">
+                        <button class="btn btn-secondary">Sign Up</button>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4
-                        class="d-inline-block text-secondary text-uppercase border-bottom border-5 border-secondary mb-4">
-                        Newsletter</h4>
-                    <form action="">
-                        <div class="input-group">
-                            <input type="text" class="form-control p-3 border-0" placeholder="Your Email Address">
-                            <button class="btn btn-secondary">Sign Up</button>
-                        </div>
-                    </form>
-                    <h6 class="text-secondary text-uppercase mt-4 mb-3">Follow Us</h6>
-                    <div class="d-flex">
-                        <a class="btn btn-lg btn-secondary btn-lg-square rounded-circle me-2" href="#"><i
-                                class="fab fa-twitter"></i></a>
-                        <a class="btn btn-lg btn-secondary btn-lg-square rounded-circle me-2" href="#"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-lg btn-secondary btn-lg-square rounded-circle me-2" href="#"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-lg btn-secondary btn-lg-square rounded-circle" href="#"><i
-                                class="fab fa-instagram"></i></a>
-                    </div>
+                </form>
+                <h6 class="text-secondary text-uppercase mt-4 mb-3">Follow Us</h6>
+                <div class="d-flex">
+                    <a class="btn btn-lg btn-secondary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-lg btn-secondary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-lg btn-secondary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-lg btn-secondary btn-lg-square rounded-circle" href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid bg-dark text-light border-top border-secondary py-4">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-md-0">&copy; <a class="text-secondary" href="#">HEARTALYZE</a>. All Rights Reserved.
-                    </p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <p class="mb-0">Designed by <a class="text-secondary" href="https://htmlcodex.com">KELOMPOK DATA
-                            SCIENCE</a></p>
-                </div>
+</div>
+<div class="container-fluid bg-dark text-light border-top border-secondary py-4">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="mb-md-0">&copy; <a class="text-secondary" href="#">TyroPredict</a>. All Rights Reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <p class="mb-0">Designed by <a class="text-secondary" href="https://htmlcodex.com">Kelompok Data Science</a></p>
             </div>
         </div>
     </div>
+</div>
+<!-- Footer End -->
+
     <!-- Footer End -->
 
 
@@ -254,6 +196,10 @@
 
 
     <script>
+        document.getElementById('uploadFileButton').addEventListener('click', function() {
+        document.getElementById('fileInput').click();
+    });
+
         document.getElementById('dropArea').addEventListener('click', function () {
             document.getElementById('fileInput').click();
         });
